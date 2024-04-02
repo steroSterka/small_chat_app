@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:small_chat_app/components/c_button.dart';
+import 'package:small_chat_app/pages/home/home_page.dart';
 import 'package:small_chat_app/pages/login/widgets/login_textfield.dart';
 import 'package:small_chat_app/utils/text_utils.dart';
 
@@ -14,6 +15,7 @@ class LoginPage extends StatelessWidget {
   LoginPage({super.key});
 
   void login() {
+    Get.to(()=> HomePage());
     print('Email: ${emailController.text}');
     print('Password: ${passwordController.text}');
   }
