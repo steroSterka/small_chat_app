@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
-
 import '../../../controllers /services/auth/auth_service.dart';
 import '../../login/login_page.dart';
-import '../../settings/settings_page.dart';
 
 class CDrawer extends StatelessWidget {
   const CDrawer({super.key});
@@ -21,9 +19,9 @@ class CDrawer extends StatelessWidget {
     }
   }
 
-    void goToSettings() {
-    Get.to(()=> SettingsPage());
-  }
+    void goToSettings(){
+    Get.to(()=> const SettingsPage());
+    }
   @override
   Widget build(BuildContext context) {
     return Drawer(
