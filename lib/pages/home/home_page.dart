@@ -1,11 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:get/instance_manager.dart';
+import 'package:get/get.dart';
+import '../../controllers /services/auth_service.dart';
+import '../login/login_page.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
-  void _logout() {
-    print('Logout');
+  void _logout() async {
+    final authService = AuthService();
+    try{
+      await authService.signOut();
+      Get.offAll(()=> LoginPage());
+    }
+    catch(e){
+      Get.snackbar('Error', e.toString(), snackPosition: SnackPosition.BOTTOM, backgroundColor: Colors.red);
+    }
   }
 
   @override
