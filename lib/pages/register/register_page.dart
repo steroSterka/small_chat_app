@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import '../../components/c_button.dart';
-import '../../controllers /services/auth_service.dart';
+import '../../controllers /services/auth/auth_service.dart';
 import '../../utils/text_utils.dart';
 import '../home/home_page.dart';
 import '../login/widgets/login_textfield.dart';
@@ -19,7 +19,7 @@ class RegisterPage extends StatelessWidget {
     if(passwordController.text == confirmPasswordController.text){
       try{
         await authService.registerWithEmailAndPassword(emailController.text, passwordController.text);
-        Get.offAll(()=> const HomePage());
+        Get.offAll(()=> HomePage());
       }
       catch(e){
         Get.snackbar('Error', e.toString(), snackPosition: SnackPosition.BOTTOM, backgroundColor: Colors.red);

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:small_chat_app/components/c_button.dart';
-import 'package:small_chat_app/controllers%20/services/auth_service.dart';
+import 'package:small_chat_app/controllers%20/services/auth/auth_service.dart';
 import 'package:small_chat_app/pages/home/home_page.dart';
 import 'package:small_chat_app/pages/login/widgets/login_textfield.dart';
 import 'package:small_chat_app/utils/text_utils.dart';

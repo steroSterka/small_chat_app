@@ -2,7 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:small_chat_app/pages/home/home_page.dart';
 
-import '../../pages/login/login_page.dart';
+import '../../../pages/login/login_page.dart';
 
 class AuthGate extends StatelessWidget {
   const AuthGate({super.key});
@@ -14,7 +14,7 @@ class AuthGate extends StatelessWidget {
         stream: FirebaseAuth.instance.authStateChanges(),
         builder: (context, snapshot) {
           if(snapshot.hasData){
-            return const HomePage();
+            return HomePage();
           }
           else{
             return LoginPage();
