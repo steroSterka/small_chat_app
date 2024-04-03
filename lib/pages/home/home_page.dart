@@ -46,7 +46,10 @@ class HomePage extends StatelessWidget {
   Widget buildUserListItems(Map<String, dynamic> userData, BuildContext context){
     if(userData['email'] != authService.currentUser()!.email){
       return UserTile(text: userData["email"], 
-        onTap: ()=> Get.to(()=> ChatPage(receiverEmail: userData["email"],)));
+        onTap: ()=> Get.to(()=> ChatPage(
+          receiverEmail: userData["email"],
+          receiverID: userData["uid"],
+          )));
     }
     return const SizedBox();
   }
