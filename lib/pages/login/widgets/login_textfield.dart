@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:small_chat_app/utils/text_utils.dart';
 
 class LoginTextfield extends StatelessWidget {
   final String hintText;

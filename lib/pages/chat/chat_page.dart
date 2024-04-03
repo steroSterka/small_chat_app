@@ -3,7 +3,6 @@ import 'package:iconsax/iconsax.dart';
 import 'package:small_chat_app/controllers%20/services/auth/auth_service.dart';
 import 'package:small_chat_app/controllers%20/services/chat/chat_service.dart';
 import 'package:small_chat_app/pages/login/widgets/login_textfield.dart';
-import 'package:small_chat_app/utils/colors_utils.dart';
 import 'package:small_chat_app/utils/utils.dart';
 
 import '../../components/chat_bubble.dart';

@@ -5,8 +5,6 @@ import 'package:get/route_manager.dart';
 import 'package:small_chat_app/controllers%20/services/auth/auth_gate.dart';
 import 'package:small_chat_app/firebase_options.dart';
 import 'package:small_chat_app/themes/light_mode.dart';
-
-import 'controllers /theme/theme_controller.dart';
 import 'themes/dark_mode.dart';
 
 void main() async {
