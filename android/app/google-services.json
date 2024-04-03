@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "538318685255",
+    "project_id": "small-chat-app-329b0",
+    "storage_bucket": "small-chat-app-329b0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:538318685255:android:fd29862329f343d9a1dd62",
+        "android_client_info": {
+          "package_name": "com.example.small_chat_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAUnrUR0-5suBs48Ao-mVCFjw4IzPezdxg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
