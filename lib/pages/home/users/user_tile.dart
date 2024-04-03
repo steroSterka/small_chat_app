@@ -14,7 +14,7 @@ class UserTile extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        margin: EdgeInsets.all(10),
+        margin: const EdgeInsets.all(10),
         height: 70,
         decoration: BoxDecoration(
           color: Theme.of(context).colorScheme.secondary,
