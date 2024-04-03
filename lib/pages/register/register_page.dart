@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import '../../components/c_button.dart';
+import '../../controllers /services/auth_service.dart';
 import '../../utils/text_utils.dart';
+import '../home/home_page.dart';
 import '../login/widgets/login_textfield.dart';
 
 class RegisterPage extends StatelessWidget {
@@ -12,9 +14,21 @@ class RegisterPage extends StatelessWidget {
 
   RegisterPage({super.key});
 
-  void register() {
-    print('Email: ${emailController.text}');
-    print('Password: ${passwordController.text}');
+  void register() async {
+    final authService = AuthService();
+    if(passwordController.text == confirmPasswordController.text){
+      try{
+        await authService.registerWithEmailAndPassword(emailController.text, passwordController.text);
+        Get.offAll(()=> const HomePage());
+      }
+      catch(e){
+        Get.snackbar('Error', e.toString(), snackPosition: SnackPosition.BOTTOM, backgroundColor: Colors.red);
+      }
+    }
+    else{
+      Get.snackbar('Error', 'Passwords do not match', snackPosition: SnackPosition.BOTTOM, backgroundColor: Colors.red);
+    }
+    
   }
 
   @override
