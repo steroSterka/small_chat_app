@@ -133,7 +133,7 @@ class _ChatPageState extends State<ChatPage> {
         children: [
           IconButton(onPressed: () {}, icon: Icon(Iconsax.camera)),
           Expanded(
-            child: LoginTextfield(
+            child: CTextField(
               controller: messageController,
               hintText: 'Type a message',
               obscureText: false,

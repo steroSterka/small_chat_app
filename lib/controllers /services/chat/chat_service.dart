@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:get/get.dart';
 import 'package:small_chat_app/controllers%20/services/auth/auth_service.dart';
 import 'package:small_chat_app/models/message.dart';
 
@@ -48,4 +49,31 @@ class ChatService {
         .orderBy('timestamp', descending: false)
         .snapshots();
   }
+
+  // void searchUsers(String searchEmail) {
+  //   _firestore.collection('Users').where('email', isEqualTo: searchEmail).get().then((snapshot) {
+  //     searchResults.value = snapshot.docs.map((doc) => doc.data()).toList();
+  //   });
+  // }
+
+
+
+  var isLoading = false.obs;
+
+  void searchUsers(String searchEmail) {
+    isLoading.value = true;
+    _firestore
+        .collection('Users')
+        .orderBy('email')
+        .startAt([searchEmail])
+        .endAt([searchEmail + '\uf8ff'])
+        .get()
+        .then((snapshot) {
+          searchResults.value = snapshot.docs.map((doc) => doc.data()).toList();
+                    isLoading.value = false;
+
+        });
+  }
+
+  var searchResults = [].obs;
 }

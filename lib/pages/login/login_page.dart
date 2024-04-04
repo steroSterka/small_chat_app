@@ -45,13 +45,13 @@ class LoginPage extends StatelessWidget {
             const SizedBox(height: 20),
             Text(TextUtils.welcome, style: TextStyle(fontSize: 30, color: Theme.of(context).colorScheme.primary)),
             const SizedBox(height: 50),
-            LoginTextfield(
+            CTextField(
               hintText: TextUtils.email,
               obscureText: false,
               controller: emailController,
             ),
             const SizedBox(height: 10),
-            LoginTextfield(
+            CTextField(
               hintText: TextUtils.password,
               obscureText: true,
               controller: passwordController,
