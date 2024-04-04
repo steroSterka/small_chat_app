@@ -7,28 +7,71 @@ import 'package:small_chat_app/utils/utils.dart';
 
 import '../../components/chat_bubble.dart';
 
-class ChatPage extends StatelessWidget {
+class ChatPage extends StatefulWidget {
   final String receiverEmail;
   final String receiverID;
   ChatPage({super.key, required this.receiverEmail, required this.receiverID});
 
+  @override
+  State<ChatPage> createState() => _ChatPageState();
+}
+
+class _ChatPageState extends State<ChatPage> {
   final ChatService chatService = ChatService();
+
   final AuthService authService = AuthService();
 
   final TextEditingController messageController = TextEditingController();
 
-  void sendMessage() {
+  final ScrollController scrollController = ScrollController();
+
+  void sendMessage() async {
     if (messageController.text.isNotEmpty) {
-      chatService.sendMessage(receiverID, messageController.text);
+      await chatService.sendMessage(widget.receiverID, messageController.text);
       messageController.clear();
     }
+    scrolDown();
+  }
+
+  FocusNode focusNode = FocusNode();
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    focusNode.addListener(() {
+      if (focusNode.hasFocus) {
+        Future.delayed(const Duration(milliseconds: 500), ()=> scrolDown());
+      } else {
+        print('Lost focus');
+      }
+    });
+
+  Future.delayed(const Duration(milliseconds: 500), ()=> scrolDown());
+
+
+  }
+
+  @override
+  void dispose() {
+    focusNode.dispose();
+    messageController.dispose();
+    super.dispose();
+  }
+
+  void scrolDown() {
+    scrollController.animateTo(
+      scrollController.position.maxScrollExtent,
+      duration: const Duration(milliseconds: 700),
+      curve: Curves.fastOutSlowIn,
+    );
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text(receiverEmail),
+          title: Text(widget.receiverEmail),
           backgroundColor: Colors.transparent,
           foregroundColor: Colors.grey,
           elevation: 0,
@@ -44,7 +87,7 @@ class ChatPage extends StatelessWidget {
   Widget buildMessagesList() {
     String senderID = authService.currentUser()!.uid;
     return StreamBuilder(
-        stream: chatService.getMessages(senderID, receiverID),
+        stream: chatService.getMessages(senderID, widget.receiverID),
         builder: (context, snapshot) {
           if (snapshot.hasError) {
             return const Center(
@@ -57,6 +100,7 @@ class ChatPage extends StatelessWidget {
             );
           }
           return ListView(
+            controller: scrollController,
             children: snapshot.data!.docs
                 .map((doc) => buildMessageItems(doc))
                 .toList(),
@@ -93,6 +137,7 @@ class ChatPage extends StatelessWidget {
               controller: messageController,
               hintText: 'Type a message',
               obscureText: false,
+              focusNode: focusNode,
             ),
           ),
           IconButton(

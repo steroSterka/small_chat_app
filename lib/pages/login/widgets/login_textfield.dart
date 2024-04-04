@@ -4,10 +4,12 @@ class LoginTextfield extends StatelessWidget {
   final String hintText;
   final bool obscureText;
   final TextEditingController controller;
+  final FocusNode? focusNode;
   const LoginTextfield({
     required this.hintText,
     required this.obscureText,
     required this.controller,
+    this.focusNode,
     super.key});
 
   @override
@@ -15,6 +17,7 @@ class LoginTextfield extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 25),
       child: TextField(
+        focusNode: focusNode,
         controller: controller,
         obscureText: obscureText,
         decoration: InputDecoration(

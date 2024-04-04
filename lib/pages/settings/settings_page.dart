@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:small_chat_app/themes/dark_mode.dart';
+import 'package:small_chat_app/themes/light_mode.dart';
 class SettingsPage extends StatelessWidget {
   const SettingsPage({super.key});
 
@@ -31,7 +33,7 @@ class SettingsPage extends StatelessWidget {
                   const Text("Dark Mode"), 
                   CupertinoSwitch(
                         value: Get.isDarkMode,
-                        onChanged: (value) {Get.changeTheme(Get.isDarkMode? ThemeData.light(): ThemeData.dark());
+                        onChanged: (value) {Get.changeTheme(Get.isDarkMode? lightTheme: darkTheme);
 ;
                         },
                       ),
