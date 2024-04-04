@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
-import 'package:small_chat_app/components/search_textfield.dart';
 import 'package:small_chat_app/controllers%20/services/auth/auth_service.dart';
 import 'package:small_chat_app/controllers%20/services/chat/chat_service.dart';
 import 'package:small_chat_app/pages/chat/chat_page.dart';
 import 'package:small_chat_app/pages/home/drawer/drawer.dart';
 import 'package:small_chat_app/pages/home/users/user_tile.dart';
-import 'package:small_chat_app/pages/login/widgets/login_textfield.dart';
 import 'package:small_chat_app/pages/search/search_page.dart';
 
 class HomePage extends StatelessWidget {

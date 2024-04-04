@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:iconsax/iconsax.dart';
 import 'package:small_chat_app/components/search_textfield.dart';
-import 'package:small_chat_app/pages/login/widgets/login_textfield.dart';
-
 import '../../controllers /services/auth/auth_service.dart';
 import '../../controllers /services/chat/chat_service.dart';
 import '../chat/chat_page.dart';

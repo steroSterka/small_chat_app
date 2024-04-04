@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
 import 'package:iconsax/iconsax.dart';
@@ -27,9 +28,11 @@ class LoginPage extends StatelessWidget {
 
 
 
-    // Get.to(()=> HomePage());
-    print('Email: ${emailController.text}');
-    print('Password: ${passwordController.text}');
+    if (kDebugMode) {
+      print('Email: ${emailController.text}');
+      print('Password: ${passwordController.text}');
+
+    }
   }
 
   @override

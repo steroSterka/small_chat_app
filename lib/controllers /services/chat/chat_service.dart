@@ -66,7 +66,7 @@ class ChatService {
         .collection('Users')
         .orderBy('email')
         .startAt([searchEmail])
-        .endAt([searchEmail + '\uf8ff'])
+        .endAt(['$searchEmail\uf8ff'])
         .get()
         .then((snapshot) {
           searchResults.value = snapshot.docs.map((doc) => doc.data()).toList();

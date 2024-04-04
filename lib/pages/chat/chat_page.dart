@@ -10,7 +10,7 @@ import '../../components/chat_bubble.dart';
 class ChatPage extends StatefulWidget {
   final String receiverEmail;
   final String receiverID;
-  ChatPage({super.key, required this.receiverEmail, required this.receiverID});
+  const ChatPage({super.key, required this.receiverEmail, required this.receiverID});
 
   @override
   State<ChatPage> createState() => _ChatPageState();
@@ -37,14 +37,11 @@ class _ChatPageState extends State<ChatPage> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     focusNode.addListener(() {
       if (focusNode.hasFocus) {
         Future.delayed(const Duration(milliseconds: 500), ()=> scrolDown());
-      } else {
-        print('Lost focus');
-      }
+      } 
     });
 
   Future.delayed(const Duration(milliseconds: 500), ()=> scrolDown());
@@ -131,7 +128,7 @@ class _ChatPageState extends State<ChatPage> {
       margin: const EdgeInsets.only(bottom: 40),
       child: Row(
         children: [
-          IconButton(onPressed: () {}, icon: Icon(Iconsax.camera)),
+          IconButton(onPressed: () {}, icon: const Icon(Iconsax.camera)),
           Expanded(
             child: CTextField(
               controller: messageController,

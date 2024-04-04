@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import '../utils/colors_utils.dart';
 
 class ChatBubble extends StatelessWidget {
-  ChatBubble({
-    Key? key,
+  const ChatBubble({
+    super.key,
     required this.message,
     required this.isCurrentUser,
     required this.dateTime,
-  }) : super(key: key);
+  });
 
   final String message;
   final bool isCurrentUser;
@@ -36,7 +36,7 @@ class ChatBubble extends StatelessWidget {
             padding: const EdgeInsets.only(left: 10, right: 10, bottom: 5),
             child: Text(
               dateTime,
-              style: TextStyle(fontSize: 12, color: Colors.grey),
+              style: const TextStyle(fontSize: 12, color: Colors.grey),
             ),
           ),
         ],
