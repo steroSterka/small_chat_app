@@ -50,19 +50,19 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyAUnrUR0-5suBs48Ao-mVCFjw4IzPezdxg',
-    appId: '1:538318685255:android:fd29862329f343d9a1dd62',
-    messagingSenderId: '538318685255',
-    projectId: 'small-chat-app-329b0',
-    storageBucket: 'small-chat-app-329b0.appspot.com',
+    apiKey: '',
+    appId: '',
+    messagingSenderId: '',
+    projectId: '',
+    storageBucket: '',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyAEH8vAaadzD3UpY55YZEqKYeo86PZ8N1c',
-    appId: '1:538318685255:ios:f7fd3d9d019ca236a1dd62',
-    messagingSenderId: '538318685255',
-    projectId: 'small-chat-app-329b0',
-    storageBucket: 'small-chat-app-329b0.appspot.com',
-    iosBundleId: 'com.example.smallChatApp',
+    apiKey: '',
+    appId: '',
+    messagingSenderId: '',
+    projectId: '',
+    storageBucket: '',
+    iosBundleId: '',
   );
 }
