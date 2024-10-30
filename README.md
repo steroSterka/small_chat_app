@@ -61,3 +61,11 @@ flutter run
 # 📜 License
 This project is licensed under the MIT License. See the LICENSE file for more details.
 
+# Screenshots
+<img src="https://github.com/user-attachments/assets/62bf1b75-7bdc-4623-bcbe-649cc0ad38a6" width="100" height="40%">
+<img src="https://github.com/user-attachments/assets/cf951e7b-6ddd-4bee-b33f-1e4ae9110eb6" width="100" height="40%">
+<img src="https://github.com/user-attachments/assets/79c1640e-5053-4679-8ae7-ea90ca20b297" width="100" height="40%">
+<img src="https://github.com/user-attachments/assets/ec4354f5-cbf6-4d93-8950-c4cf87029e73" width="100" height="40%">
+<img src="https://github.com/user-attachments/assets/f7686b0a-5362-4e69-b1e0-8045605c2ad6" width="100" height="40%">
+
+
